@@ -18,21 +18,21 @@ function getPlatformInfo() {
     return {
       platform: 'windows',
       arch: arch === 'x64' ? 'amd64' : arch,
-      filename: 'bitrim-windows-amd64.exe',
+      filename: 'bitrim.exe',
       executable: false // Windows doesn't need chmod
     };
   } else if (platform === 'darwin') {
     return {
       platform: 'darwin',
       arch: arch === 'x64' ? 'amd64' : arch,
-      filename: 'bitrim-darwin-amd64',
+      filename: 'bitrim',
       executable: true
     };
   } else if (platform === 'linux') {
     return {
       platform: 'linux',
       arch: arch === 'x64' ? 'amd64' : arch,
-      filename: 'bitrim-linux-amd64',
+      filename: 'bitrim',
       executable: true
     };
   }
