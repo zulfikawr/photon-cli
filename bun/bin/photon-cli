@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Bitrim wrapper for Unix systems
+# This script handles calling the downloaded Go binary
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+BINARY="$SCRIPT_DIR/bitrim"
+
+if [ ! -f "$BINARY" ]; then
+  echo "❌ Bitrim binary not found. Please reinstall: bun install -g bitrim"
+  exit 1
+fi
+
+# Execute the binary with all passed arguments
+"$BINARY" "$@"

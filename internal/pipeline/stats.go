@@ -1,6 +1,6 @@
 package pipeline
 
-import "github.com/zulfikawr/photon-cli/internal/optimizer"
+import "github.com/zulfikawr/bitrim/internal/optimizer"
 
 // PipelineStats aggregates statistics from a pipeline run
 type PipelineStats struct {

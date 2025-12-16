@@ -1,10 +1,10 @@
-# 📷 Photon CLI
+# 📷 Bitrim
 
-A blazing-fast, cross-platform CLI tool for batch optimizing images and SVG files with high-concurrency processing. Compress JPEGs, PNGs, and minify SVGs with a single command.
+Bitrim (short for bit trim) is a blazing-fast, cross-platform CLI tool for batch optimizing images and SVG files with high-concurrency processing. Compress JPEGs, PNGs, and minify SVGs with a single command.
 
 [![Go 1.21+](https://img.shields.io/badge/Go-1.21+-00ADD8?logo=go)](https://golang.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![GitHub Release](https://img.shields.io/github/v/release/zulfikawr/photon-cli?include_prereleases)](https://github.com/zulfikawr/photon-cli/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/zulfikawr/bitrim?include_prereleases)](https://github.com/zulfikawr/bitrim/releases)
 
 ## ✨ Features
 
@@ -14,7 +14,7 @@ A blazing-fast, cross-platform CLI tool for batch optimizing images and SVG file
   - **JPEG**: Adjustable quality settings with optional EXIF preservation
   - **SVG**: Minification to reduce file sizes
 - **⚡ High-Concurrency**: Worker pool pattern for maximum CPU utilization
-- **🛡️ Safe by Default**: Creates `photon-output` folder, never overwrites originals without explicit confirmation
+- **🛡️ Safe by Default**: Creates `bitrim-output` folder, never overwrites originals without explicit confirmation
 - **📊 Detailed Statistics**: Real-time compression metrics and success rates
 - **🏷️ Metadata Tracking**: JSON audit trail of all processed files
 - **🎨 Smart Resizing**: Optional width-based resize with aspect ratio preservation
@@ -28,36 +28,36 @@ A blazing-fast, cross-platform CLI tool for batch optimizing images and SVG file
 
 #### From Source
 ```bash
-git clone https://github.com/zulfikawr/photon-cli.git
-cd photon-cli
-go build -o photon-cli
+git clone https://github.com/zulfikawr/bitrim.git
+cd bitrim
+go build -o bitrim
 ```
 
 #### With Go
 ```bash
-go install github.com/zulfikawr/photon-cli@latest
+go install github.com/zulfikawr/bitrim@latest
 ```
 
 ### Basic Usage
 
 ```bash
-# Optimize all images in a directory (outputs to ./photon-output/)
-photon-cli ./path/to/images
+# Optimize all images in a directory (outputs to ./bitrim-output/)
+bitrim ./path/to/images
 
 # Custom output directory
-photon-cli -o ./compressed ./path/to/images
+bitrim -o ./compressed ./path/to/images
 
 # Adjust compression quality (default: 80%)
-photon-cli -q 60 ./path/to/images
+bitrim -q 60 ./path/to/images
 
 # Resize images to 1200px width
-photon-cli -w 1200 ./path/to/images
+bitrim -w 1200 ./path/to/images
 
 # Combine multiple options
-photon-cli -q 50 -w 1600 -o ./optimized ./path/to/images
+bitrim -q 50 -w 1600 -o ./optimized ./path/to/images
 
 # See all options
-photon-cli --help
+bitrim --help
 ```
 
 ## 📋 Command Line Options
@@ -66,7 +66,7 @@ photon-cli --help
 
 | Flag | Short | Default | Description |
 |------|-------|---------|-------------|
-| `--out` | `-o` | `photon-output` | Output directory for optimized files |
+| `--out` | `-o` | `bitrim-output` | Output directory for optimized files |
 | `--quality` | `-q` | `80` | JPEG/PNG quality (1-100) |
 | `--width` | `-w` | `0` | Resize images to width (px), 0=no resize |
 | `--webp` | - | `false` | Convert images to WebP format |
@@ -94,42 +94,42 @@ photon-cli --help
 
 ### Basic Optimization
 ```bash
-photon-cli ./images
-# Outputs optimized files to ./photon-output/
+bitrim ./images
+# Outputs optimized files to ./bitrim-output/
 # Default: 80% quality, no resize
 ```
 
 ### Aggressive Compression
 ```bash
-photon-cli -q 50 -w 1200 ./images
+bitrim -q 50 -w 1200 ./images
 # Saves: ~70% file size reduction
 # Quality: Noticeable but acceptable
 ```
 
 ### Quality Focus
 ```bash
-photon-cli -q 90 ./images
+bitrim -q 90 ./images
 # Saves: ~30% file size reduction
 # Quality: Minimal difference from originals
 ```
 
 ### Preview Changes (Dry Run)
 ```bash
-photon-cli --dry-run -q 60 -w 1600 ./images
+bitrim --dry-run -q 60 -w 1600 ./images
 # Shows estimated savings without creating files
 # Perfect for testing settings before committing
 ```
 
 ### Replace Originals
 ```bash
-photon-cli --replace -q 75 ./images
+bitrim --replace -q 75 ./images
 # ⚠️ Replaces files in ./images (requires "yes" confirmation)
 # Original files will be overwritten
 ```
 
 ### Selective Processing
 ```bash
-photon-cli --ignore "node_modules,dist,.git" --depth 3 ./project
+bitrim --ignore "node_modules,dist,.git" --depth 3 ./project
 # Ignore specific folders
 # Limit recursion to 3 levels deep
 # Skip files smaller than 1MB
@@ -138,26 +138,26 @@ photon-cli --ignore "node_modules,dist,.git" --depth 3 ./project
 ### Format-Specific Quality
 ```bash
 # Use different quality for PNG vs JPEG
-photon-cli --jpeg-quality 85 --png-quality 60 ./images
+bitrim --jpeg-quality 85 --png-quality 60 ./images
 
 # Only apply quality to PNGs (ignore general --quality)
-photon-cli --png-quality 55 ./images
+bitrim --png-quality 55 ./images
 ```
 
 ### Preserve EXIF Data
 ```bash
-photon-cli --keep-exif -q 85 ./photos
+bitrim --keep-exif -q 85 ./photos
 # Maintains EXIF metadata while compressing JPEGs
 ```
 
 ## 📊 Output
 
-Photon CLI provides detailed feedback:
+Bitrim provides detailed feedback:
 
 ```
-🚀 Photon CLI initialized
+🚀 Bitrim initialized
    Input:       ./images
-   Output:      photon-output
+   Output:      bitrim-output
    Quality:     80%
    WebP:        false
    Concurrency: 2 workers
@@ -171,9 +171,9 @@ Photon CLI provides detailed feedback:
    Average per file: 0.95MB
    Success rate:     100.0%
 
-📁 Output folder: /absolute/path/photon-output
+📁 Output folder: /absolute/path/bitrim-output
 
-📄 Metadata:      photon-output/metadata.json
+📄 Metadata:      bitrim-output/metadata.json
 ```
 
 ### Metadata File
@@ -201,7 +201,7 @@ A `metadata.json` file is generated in the output folder with complete audit tra
   "files": [
     {
       "input_path": "images/photo1.jpg",
-      "output_path": "photon-output/photo1.jpg",
+      "output_path": "bitrim-output/photo1.jpg",
       "file_type": "jpeg",
       "size_original": 5242880,
       "size_processed": 1500000,
@@ -261,13 +261,13 @@ A `metadata.json` file is generated in the output folder with complete audit tra
 ## 🛡️ Safety Features
 
 ### Original Files Protected
-- By default, creates `photon-output/` folder
+- By default, creates `bitrim-output/` folder
 - Original files in input directory never modified
 - No data loss risk
 
 ### Explicit Replacement
 ```bash
-photon-cli --replace ./images
+bitrim --replace ./images
 # Shows warning:
 # ⚠️ WARNING: Replace Mode Enabled
 # Type 'yes' to continue or press Enter to cancel:
@@ -275,7 +275,7 @@ photon-cli --replace ./images
 
 ### Dry-Run Preview
 ```bash
-photon-cli --dry-run -q 60 -w 1600 ./images
+bitrim --dry-run -q 60 -w 1600 ./images
 # Calculates savings without creating any files
 # Perfect for testing before committing
 ```
@@ -315,19 +315,19 @@ ls -la ./images
 ### Issue: "Failed to write metadata"
 ```bash
 # Output folder not writable - check permissions
-ls -la ./photon-output
+ls -la ./bitrim-output
 ```
 
 ### Issue: "No files processed"
 ```bash
 # Check ignore patterns and file extensions
-photon-cli --ignore "" ./images  # Disable ignore patterns
+bitrim --ignore "" ./images  # Disable ignore patterns
 ```
 
 ### Issue: Large quality drop
 ```bash
 # Use higher quality setting
-photon-cli -q 85 ./images  # Instead of -q 50
+bitrim -q 85 ./images  # Instead of -q 50
 ```
 
 ## 📝 License
@@ -346,8 +346,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/zulfikawr/photon-cli/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/zulfikawr/photon-cli/discussions)
+- **Issues**: [GitHub Issues](https://github.com/zulfikawr/bitrim/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/zulfikawr/bitrim/discussions)
 - **Documentation**: Full feature docs in `README.md`
 
 ## 🎯 Roadmap
@@ -355,7 +355,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - [ ] WebP format support
 - [ ] AVIF format support  
 - [ ] Parallel batch processing across directories
-- [ ] Configuration files (.photonrc)
+- [ ] Configuration files (.bitrimrc)
 - [ ] Progress bar with ETA
 - [ ] EXIF auto-rotation for photos
 - [ ] Smart quality based on image content

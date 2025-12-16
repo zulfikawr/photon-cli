@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/zulfikawr/photon-cli/internal/config"
+	"github.com/zulfikawr/bitrim/internal/config"
 )
 
 func TestWalker(t *testing.T) {
