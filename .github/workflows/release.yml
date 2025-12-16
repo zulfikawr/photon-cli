@@ -58,10 +58,19 @@ jobs:
         with:
           path: ./artifacts
 
+      - name: Flatten artifacts directory
+        run: |
+          cd artifacts
+          for dir in */; do
+            mv "$dir"* . 2>/dev/null || true
+            rmdir "$dir" 2>/dev/null || true
+          done
+          ls -la
+
       - name: Create Release with Artifacts
         uses: softprops/action-gh-release@v1
         with:
-          files: artifacts/**/*
+          files: artifacts/*
           body_path: CHANGELOG.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
