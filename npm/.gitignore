@@ -4,8 +4,8 @@ package-lock.json
 yarn.lock
 
 # Binary downloads (will be downloaded during npm install)
-bin/photon-cli
-bin/photon-cli.exe
+bin/bitrim
+bin/bitrim.exe
 
 # npm cache and logs
 npm-debug.log*

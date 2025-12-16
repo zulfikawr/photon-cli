@@ -1,16 +1,16 @@
 {
-  "name": "photon-cli",
+  "name": "bitrim",
   "version": "1.0.0",
-  "description": "Blazing-fast, cross-platform Go CLI tool for batch optimizing images and SVG files with high-concurrency processing",
+  "description": "A Blazing-fast, cross-platform Go CLI tool for batch optimizing images and SVG files with high-concurrency processing",
   "author": "zulfikar",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zulfikawr/photon-cli.git"
+    "url": "git+https://github.com/zulfikawr/bitrim.git"
   },
-  "homepage": "https://github.com/zulfikawr/photon-cli#readme",
+  "homepage": "https://github.com/zulfikawr/bitrim#readme",
   "bugs": {
-    "url": "https://github.com/zulfikawr/photon-cli/issues"
+    "url": "https://github.com/zulfikawr/bitrim/issues"
   },
   "keywords": [
     "image-optimization",
@@ -25,7 +25,7 @@
     "asset-optimizer"
   ],
   "bin": {
-    "photon-cli": "./bin/photon-cli"
+    "bitrim": "bin/bitrim"
   },
   "os": [
     "linux",
@@ -45,7 +45,7 @@
     "postinstall": "node scripts/postinstall.js",
     "download-binary": "node scripts/download.js",
     "verify": "npm run test && npm run build",
-    "publish": "npm run verify && npm publish --access public"
+    "publish": "npm run verify && npm publish"
   },
   "preferGlobal": true,
   "files": [

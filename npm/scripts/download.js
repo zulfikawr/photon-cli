@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Manual download script for photon-cli binary
+ * Manual download script for bitrim binary
  * Run with: node scripts/download.js
  */
 

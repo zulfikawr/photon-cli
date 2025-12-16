@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Test script for photon-cli npm package
+ * Test script for bitrim npm package
  * Validates package structure before publishing
  */
 
@@ -30,7 +30,7 @@ test('package.json exists and is valid', () => {
   assert(fs.existsSync(pkgPath), 'package.json not found');
   
   const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
-  assert(pkg.name === 'photon-cli', 'Invalid package name');
+  assert(pkg.name === 'bitrim', 'Invalid package name');
   assert(pkg.version, 'Missing version');
   assert(pkg.author, 'Missing author');
   assert(pkg.license, 'Missing license');
@@ -59,14 +59,14 @@ test('bin directory exists', () => {
   assert(fs.statSync(binPath).isDirectory(), 'bin is not a directory');
 });
 
-test('bin/photon-cli wrapper exists', () => {
-  const binPath = path.join(__dirname, '..', 'bin', 'photon-cli');
-  assert(fs.existsSync(binPath), 'bin/photon-cli wrapper not found');
+test('bin/bitrim wrapper exists', () => {
+  const binPath = path.join(__dirname, '..', 'bin', 'bitrim');
+  assert(fs.existsSync(binPath), 'bin/bitrim wrapper not found');
 });
 
-test('bin/photon-cli.cmd wrapper exists', () => {
-  const cmdPath = path.join(__dirname, '..', 'bin', 'photon-cli.cmd');
-  assert(fs.existsSync(cmdPath), 'bin/photon-cli.cmd wrapper not found');
+test('bin/bitrim.cmd wrapper exists', () => {
+  const cmdPath = path.join(__dirname, '..', 'bin', 'bitrim.cmd');
+  assert(fs.existsSync(cmdPath), 'bin/bitrim.cmd wrapper not found');
 });
 
 test('scripts directory exists', () => {
@@ -99,8 +99,8 @@ test('postinstall.js is valid JavaScript', () => {
 });
 
 test('bin wrappers are not empty', () => {
-  const unixPath = path.join(__dirname, '..', 'bin', 'photon-cli');
-  const cmdPath = path.join(__dirname, '..', 'bin', 'photon-cli.cmd');
+  const unixPath = path.join(__dirname, '..', 'bin', 'bitrim');
+  const cmdPath = path.join(__dirname, '..', 'bin', 'bitrim.cmd');
   
   const unixContent = fs.readFileSync(unixPath, 'utf8');
   const cmdContent = fs.readFileSync(cmdPath, 'utf8');
@@ -110,7 +110,7 @@ test('bin wrappers are not empty', () => {
 });
 
 // Run all tests
-console.log('\n📋 Running photon-cli npm package tests...\n');
+console.log('\n📋 Running bitrim npm package tests...\n');
 
 tests.forEach(({ name, fn }) => {
   try {

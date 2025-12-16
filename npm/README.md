@@ -1,11 +1,11 @@
-# Photon CLI - npm Package
+# Bitrim - npm Package
 
-This is the npm wrapper for **Photon CLI**, a blazing-fast, cross-platform image and SVG optimizer.
+This is the npm wrapper for **Bitrim**, a blazing-fast, cross-platform image and SVG optimizer.
 
 ## Installation
 
 ```bash
-npm install -g photon-cli
+npm install -g bitrim
 ```
 
 This will download and install the appropriate binary for your platform (Windows, macOS, or Linux).
@@ -14,16 +14,16 @@ This will download and install the appropriate binary for your platform (Windows
 
 ```bash
 # Optimize images in current directory
-photon-cli .
+bitrim .
 
 # Optimize with specific quality
-photon-cli . --quality 75
+bitrim . --quality 75
 
 # Dry run to see what would be optimized
-photon-cli . --dry-run
+bitrim . --dry-run
 
 # Get help
-photon-cli --help
+bitrim --help
 ```
 
 ## Features
@@ -34,14 +34,14 @@ photon-cli --help
   - PNG color quantization (80% quality = 70% size reduction)
   - JPEG quality-based compression
   - SVG minification
-- 🛡️ **Safe-by-Default**: Creates `photon-output` folder, never overwrites originals
+- 🛡️ **Safe-by-Default**: Creates `bitrim-output` folder, never overwrites originals
 - ⚙️ **Flexible**: Dry-run mode, batch processing, depth control, ignore patterns
 - 🔧 **Cross-Platform**: Works on Windows, macOS, and Linux
 
 ## Full Documentation
 
 For complete documentation, examples, and troubleshooting, see:
-https://github.com/zulfikawr/photon-cli#readme
+https://github.com/zulfikawr/bitrim#readme
 
 ## License
 
@@ -53,4 +53,4 @@ Contributions welcome! See CONTRIBUTING.md on the main repository.
 
 ## Source Repository
 
-https://github.com/zulfikawr/photon-cli
+https://github.com/zulfikawr/bitrim

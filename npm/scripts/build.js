@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Build script for photon-cli
+ * Build script for bitrim
  * Builds Go binaries for all supported platforms
  */
 
@@ -10,16 +10,16 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const platforms = [
-  { os: 'windows', arch: 'amd64', name: 'photon-cli-windows-amd64.exe' },
-  { os: 'darwin', arch: 'amd64', name: 'photon-cli-darwin-amd64' },
-  { os: 'linux', arch: 'amd64', name: 'photon-cli-linux-amd64' },
+  { os: 'windows', arch: 'amd64', name: 'bitrim-windows-amd64.exe' },
+  { os: 'darwin', arch: 'amd64', name: 'bitrim-darwin-amd64' },
+  { os: 'linux', arch: 'amd64', name: 'bitrim-linux-amd64' },
 ];
 
 const projectRoot = path.join(__dirname, '..');
 const goRoot = path.join(projectRoot, '..');
 const binDir = path.join(projectRoot, 'bin');
 
-console.log('\n🔨 Building photon-cli binaries for all platforms...\n');
+console.log('\n🔨 Building bitrim binaries for all platforms...\n');
 
 // Ensure bin directory exists
 if (!fs.existsSync(binDir)) {

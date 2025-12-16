@@ -7,7 +7,7 @@ const { execSync } = require('child_process');
 
 const RELEASE_TAG = 'v1.0.0';
 const GITHUB_OWNER = 'zulfikawr';
-const GITHUB_REPO = 'photon-cli';
+const GITHUB_REPO = 'bitrim';
 const GITHUB_API = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/releases/tags/${RELEASE_TAG}`;
 
 // Determine platform and architecture
@@ -19,21 +19,21 @@ function getPlatformInfo() {
     return {
       platform: 'windows',
       arch: arch === 'x64' ? 'amd64' : arch,
-      filename: 'photon-cli-windows-amd64.exe',
+      filename: 'bitrim-windows-amd64.exe',
       executable: false // Windows doesn't need chmod
     };
   } else if (platform === 'darwin') {
     return {
       platform: 'darwin',
       arch: arch === 'x64' ? 'amd64' : arch,
-      filename: 'photon-cli-darwin-amd64',
+      filename: 'bitrim-darwin-amd64',
       executable: true
     };
   } else if (platform === 'linux') {
     return {
       platform: 'linux',
       arch: arch === 'x64' ? 'amd64' : arch,
-      filename: 'photon-cli-linux-amd64',
+      filename: 'bitrim-linux-amd64',
       executable: true
     };
   }
@@ -81,7 +81,7 @@ function downloadBinary(downloadUrl, outputPath) {
 // Get download URL from GitHub release
 function getDownloadUrl(filename) {
   return new Promise((resolve, reject) => {
-    https.get(GITHUB_API, { headers: { 'User-Agent': 'photon-cli-npm' } }, (response) => {
+    https.get(GITHUB_API, { headers: { 'User-Agent': 'bitrim-npm' } }, (response) => {
       let data = '';
 
       response.on('data', (chunk) => {
@@ -111,14 +111,14 @@ async function install() {
   try {
     const platformInfo = getPlatformInfo();
     const binDir = path.join(__dirname, '..', 'bin');
-    const binPath = path.join(binDir, process.platform === 'win32' ? 'photon-cli.exe' : 'photon-cli');
+    const binPath = path.join(binDir, process.platform === 'win32' ? 'bitrim.exe' : 'bitrim');
 
     // Create bin directory if it doesn't exist
     if (!fs.existsSync(binDir)) {
       fs.mkdirSync(binDir, { recursive: true });
     }
 
-    console.log(`📥 Downloading photon-cli for ${platformInfo.platform}-${platformInfo.arch}...`);
+    console.log(`📥 Downloading bitrim for ${platformInfo.platform}-${platformInfo.arch}...`);
 
     const downloadUrl = await getDownloadUrl(platformInfo.filename);
     await downloadBinary(downloadUrl, binPath);
@@ -128,8 +128,8 @@ async function install() {
       fs.chmodSync(binPath, 0o755);
     }
 
-    console.log(`✅ Successfully installed photon-cli to ${binPath}`);
-    console.log(`🚀 Try it out: photon-cli --help`);
+    console.log(`✅ Successfully installed bitrim to ${binPath}`);
+    console.log(`🚀 Try it out: bitrim --help`);
   } catch (error) {
     console.error(`❌ Installation failed: ${error.message}`);
     process.exit(1);
