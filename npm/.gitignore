@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Binary downloads (will be downloaded during npm install)
+bin/photon-cli
+bin/photon-cli.exe
+
+# npm cache and logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.sublime-project
+.sublime-workspace
+
+# Build and test artifacts
+dist/
+build/
+coverage/
+.nyc_output
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
