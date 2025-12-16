@@ -5,8 +5,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/zulfikawr/photon-cli/internal/config"
-	"github.com/zulfikawr/photon-cli/internal/optimizer"
+	"github.com/zulfikawr/bitrim/internal/config"
+	"github.com/zulfikawr/bitrim/internal/optimizer"
 )
 
 // ProcessResult wraps the optimizer result with additional pipeline metadata

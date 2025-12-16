@@ -13,7 +13,7 @@ import (
 	"strings"
 
 	"github.com/disintegration/imaging"
-	"github.com/zulfikawr/photon-cli/internal/config"
+	"github.com/zulfikawr/bitrim/internal/config"
 )
 
 // ProcessImage handles JPEG and PNG compression and conversion

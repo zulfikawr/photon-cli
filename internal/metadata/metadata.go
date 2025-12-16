@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/zulfikawr/photon-cli/internal/config"
-	"github.com/zulfikawr/photon-cli/internal/pipeline"
+	"github.com/zulfikawr/bitrim/internal/config"
+	"github.com/zulfikawr/bitrim/internal/pipeline"
 )
 
 // ProcessingRecord represents a single file's processing record

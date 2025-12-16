@@ -1,4 +1,4 @@
-module github.com/zulfikawr/photon-cli
+module github.com/zulfikawr/bitrim
 
 go 1.25.5
 

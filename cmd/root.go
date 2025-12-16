@@ -8,17 +8,17 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/zulfikawr/photon-cli/internal/config"
-	"github.com/zulfikawr/photon-cli/internal/metadata"
-	"github.com/zulfikawr/photon-cli/internal/pipeline"
+	"github.com/zulfikawr/bitrim/internal/config"
+	"github.com/zulfikawr/bitrim/internal/metadata"
+	"github.com/zulfikawr/bitrim/internal/pipeline"
 	"github.com/spf13/cobra"
 )
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "photon [flags] <input-directory>",
-	Short: "Photon CLI - High-concurrency asset optimizer",
-	Long: `Photon CLI is a powerful cross-platform asset optimizer that:
+	Use:   "bitrim [flags] <input-directory>",
+	Short: "Bitrim - High-concurrency asset optimizer",
+	Long: `Bitrim is a powerful cross-platform asset optimizer that:
   - Recursively scans directories
   - Compresses images (JPG, PNG)
   - Converts images to WebP format
@@ -46,7 +46,7 @@ func init() {
 		&opts.Output,
 		"out", "o",
 		"",
-		"Output directory (default: photon-output)",
+		"Output directory (default: bitrim-output)",
 	)
 
 	rootCmd.Flags().IntVarP(
@@ -174,13 +174,13 @@ func runOptimizer(cmd *cobra.Command, args []string) error {
 		opts.Output = opts.Input
 		fmt.Printf("✓ Confirmed. Proceeding with replacement...\n\n")
 	} else {
-		// If output not specified, create photon-output in the current directory
+		// If output not specified, create bitrim-output in the current directory
 		if opts.Output == "" {
-			opts.Output = filepath.Join(".", "photon-output")
+			opts.Output = filepath.Join(".", "bitrim-output")
 		}
 	}
 
-	fmt.Printf("🚀 Photon CLI initialized\n")
+	fmt.Printf("🚀 Bitrim initialized\n")
 	fmt.Printf("   Input:       %s\n", opts.Input)
 	
 	if opts.DryRun {

@@ -28,11 +28,11 @@ jobs:
         run: go test -v ./...
 
       - name: Build
-        run: go build -o photon-cli
+        run: go build -o bitrim
 
       - name: Verify binary
         run: |
-          if [ -f photon-cli ]; then
-            ./photon-cli --help
+          if [ -f bitrim ]; then
+            ./bitrim --help
           fi
         shell: bash

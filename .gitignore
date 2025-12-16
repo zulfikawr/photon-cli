@@ -17,6 +17,7 @@ go.work
 
 # IDE
 .vscode/
+.idx/
 .idea/
 *.swp
 *.swo
@@ -24,6 +25,6 @@ go.work
 .DS_Store
 
 # Project specific
-photon-output/
+bitrim-output/
 test-images/
 *.tmp

@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2024-12-16
 
 ### Added
-- Initial release of Photon CLI
+- Initial release of Bitrim
 - High-concurrency image and SVG optimization
 - Support for JPEG, PNG, and SVG formats
 - Intelligent PNG color quantization for effective compression
@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - SVG minification
 - Optional image resizing with aspect ratio preservation
 - Worker pool pattern for concurrent processing
-- Safe-by-default operation with `photon-output` folder
+- Safe-by-default operation with `bitrim-output` folder
 - `--replace` flag for explicit original file replacement (with confirmation)
 - `--dry-run` mode to preview savings without writing files
 - Detailed statistics and compression metrics

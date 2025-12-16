@@ -1,6 +1,6 @@
-# Contributing to Photon CLI
+# Contributing to Bitrim
 
-Thank you for your interest in contributing to Photon CLI! We appreciate your help in making this project better.
+Thank you for your interest in contributing to Bitrim! We appreciate your help in making this project better.
 
 ## Getting Started
 
@@ -13,8 +13,8 @@ Thank you for your interest in contributing to Photon CLI! We appreciate your he
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/zulfikawr/photon-cli.git
-cd photon-cli
+git clone https://github.com/zulfikawr/bitrim.git
+cd bitrim
 ```
 
 2. Install dependencies:
@@ -24,7 +24,7 @@ go mod download
 
 3. Build the project:
 ```bash
-go build -o photon-cli
+go build -o bitrim
 ```
 
 4. Run tests:
@@ -60,7 +60,7 @@ Before submitting a PR:
 ## Project Structure
 
 ```
-photon-cli/
+bitrim/
 ├── cmd/
 │   └── root.go           # CLI command definitions
 ├── internal/
@@ -97,7 +97,7 @@ photon-cli/
 
 When reporting bugs, please include:
 - Operating system and Go version
-- Photon CLI version
+- Bitrim version
 - Command used and flags
 - Input file type and size
 - Error message or unexpected behavior
@@ -144,4 +144,4 @@ Feel free to open an issue or discussion on GitHub for questions about the proje
 
 ---
 
-Thank you for helping improve Photon CLI! 🎉
+Thank you for helping improve Bitrim! 🎉
