@@ -3,7 +3,6 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
-const { execSync } = require('child_process');
 
 const RELEASE_TAG = 'v1.0.0';
 const GITHUB_OWNER = 'zulfikawr';

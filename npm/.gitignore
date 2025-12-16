@@ -4,8 +4,7 @@ package-lock.json
 yarn.lock
 
 # Binary downloads (will be downloaded during npm install)
-bin/bitrim
-bin/bitrim.exe
+bin/
 
 # npm cache and logs
 npm-debug.log*

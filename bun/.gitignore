@@ -5,8 +5,7 @@ yarn.lock
 bun.lockb
 
 # Binary downloads (will be downloaded during bun install)
-bin/bitrim
-bin/bitrim.exe
+bin/
 
 # Bun cache and logs
 npm-debug.log*

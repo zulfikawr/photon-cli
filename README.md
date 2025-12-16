@@ -5,6 +5,7 @@ Bitrim (short for bit trim) is a blazing-fast, cross-platform CLI tool for batch
 [![Go 1.21+](https://img.shields.io/badge/Go-1.21+-00ADD8?logo=go)](https://golang.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GitHub Release](https://img.shields.io/github/v/release/zulfikawr/bitrim?include_prereleases)](https://github.com/zulfikawr/bitrim/releases)
+[![npm version](https://img.shields.io/npm/v/bitrim?logo=npm)](https://www.npmjs.com/package/bitrim)
 
 ## ✨ Features
 
@@ -25,6 +26,17 @@ Bitrim (short for bit trim) is a blazing-fast, cross-platform CLI tool for batch
 ## 🚀 Quick Start
 
 ### Installation
+
+#### 📦 Via npm
+```bash
+npm install bitrim
+```
+
+#### 📦 Via bun
+```bash
+bun install bitrim
+```
+The npm and bun package automatically downloads the appropriate binary for your platform (Windows, macOS, Linux).
 
 #### From Source
 ```bash
