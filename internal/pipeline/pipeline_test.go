@@ -30,7 +30,7 @@ func TestWalker(t *testing.T) {
 
 	// Walk the directory
 	jobsCh := make(chan FileInfo, 10)
-	walker := NewWalker(testDir, jobsCh)
+	walker := NewWalker(testDir, jobsCh, []string{}, 0, 0)
 
 	files := make([]FileInfo, 0)
 	go func() {

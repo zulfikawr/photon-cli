@@ -26,7 +26,7 @@ func TestProcessSVG(t *testing.T) {
 	}
 
 	// Process the SVG
-	result := ProcessSVG(svgPath, outputDir)
+	result := ProcessSVG(svgPath, outputDir, false)
 
 	if !result.Success {
 		t.Fatalf("ProcessSVG failed: %s", result.Error)
