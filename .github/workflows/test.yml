@@ -1,0 +1,38 @@
+name: Test Build
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+
+jobs:
+  test-build:
+    name: Test Build ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        go-version: ['1.21', '1.22']
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: ${{ matrix.go-version }}
+
+      - name: Run tests
+        run: go test -v ./...
+
+      - name: Build
+        run: go build -o photon-cli
+
+      - name: Verify binary
+        run: |
+          if [ -f photon-cli ]; then
+            ./photon-cli --help
+          fi
+        shell: bash
